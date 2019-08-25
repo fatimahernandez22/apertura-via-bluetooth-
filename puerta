@@ -1,0 +1,86 @@
+UNIVERSIDAD POLITÉCNICA DE TULANCINGO
+ “Líderes construyendo su futuro”
+
+ING. ELECTRÓNICA Y TELECOMUNICACIONES
+PUERTA CON APERTURA POR VIA BLUETOOTH
+SEMINARIO DE PROYECTOS
+
+Profesor:
+Ing. Arturo Negrete Medellín 
+Elaboró: 
+HERNÁNDEZ JUÁREZ FÁTIMA
+AVILA PINEDA DANIEL
+
+
+
+
+9no.Cuatrimestre
+Mayo - Agosto 2019
+
+CERRADURA AUTOMÁTICA CON SISTEMA BLUETOOTH 
+ 
+ 
+RESUMEN 
+El objetivo del proyecto es hacer una cerradura que funcionará por medio de bluetooth, el cual recibirá una orden proveniente de un teléfono celular. El circuito es sencillo, sin partes conectadas en protoboard o placa fenólica. 
+
+         
+Como se puede apreciar en la imagen, el circuito está conectado directamente al dispositivo Arduino ya que el sensor de bluetooth necesita 2 volts para funcionar y el servo motor necesita 5 volts, que es el voltaje que el Arduino nos puede brindar; el código está hecho de tal forma en que desde el teléfono habrá dos botones virtuales para abrir o cerrar la puerta. 
+Una vez siendo enviada la indicación desde el celular, el sensor de bluetooth va a mandar la señal al servo motor de modo que pueda realizar la función de abrir la cerradura; debido a que necesitábamos rapidez y precisión, el servo motor cuenta con cierto tiempo para realizar la función. 
+ 
+ 
+INTRODUCCIÓN 
+Marco Teórico: 
+El prototipo que se diseñó y construyó puede dar y recibir órdenes, es adaptable a las necesidades del usuario y además puede ordenar al servomotor para que gire lo necesario sin la preocupación de que rompa la cerradura o al mismo servomotor. 
+Arduino es un programa multiplataforma de código abierto, tiene su código fuente disponible a cualquier usuario; basado en hardware y software flexibles y fáciles de usar. Su lenguaje está basado en Wiring y puede ser expandido por C++, se utilizó para declarar variables e indicarle al sensor de bluetooth cuando tiene que mandar la señal para que el servo motor actúe.   
+Una cerradura funciona al meter la llave con dientes de una longitud determinada, los pines se alinean de forma que permiten que el bombín gire y la puerta se abra.  En cambio, un servomotor funciona por ejes, el eje del servo es capaz de llegar alrededor de los 180 grados. Normalmente, en algunos llega a los 210 grados, pero varía según el fabricante. Un servo normal se usa para controlar un movimiento angular de entre 0° y 180°. 
+La cantidad de voltaje aplicado al motor es proporcional a la distancia que éste necesita viajar. Así, si el eje necesita regresar una distancia grande, el motor regresará a toda velocidad. Si este necesita regresar sólo una pequeña cantidad, el motor correrá a una velocidad más lenta. A esto se le llama control proporcional. 
+  
+La función de un Jumper es interconectar los componentes electrónicos. 
+
+Objetivo de la Investigación: 
+Instalar en una puerta una cerradura que abriera por medio de bluetooth. 
+Problema: 
+En algunos lugares y situaciones es muy importante contar con un sistema de seguridad en las puertas que no sea fácilmente violable. Las cerraduras con llave o con huella dactilar pueden ser fácilmente abiertas, en este último caso si se cuenta con grafito y tinta de impresora, por lo que este prototipo puede significar mayor seguridad ya que, para abrirse la puerta, tendría que adivinarse la contraseña y, para que esto ocurriera, sería una probabilidad de  1 en 59,049 . 
+Desarrollo: 
+1-. Conseguir los materiales adecuados, como : 
+1 servo motor 
+ 
+ 
+ 
+ 
+1 Arduino UNO 
+ 
+ 
+ 
+1 sensor Bluetooth    (maestro y esclavo) 
+       
+ Puerta de madera   
+ 
+ Jumpers   
+         
+ 
+2-. Hacer el circuito: un sensor de bluetooth se integra por 4 cables como se puede apreciar en la imagen: 
+
+ 
+Dos de los cables son para la corriente que es el que va a tierra, en este caso el gris y el que se va a poner en la salida de 3.3 volts del Arduino, que es el blanco. Los otros dos van en la parte de tx y rx, si en el sensor dice que es el tx entonces ese va a el rx y pasa lo mismo con el  rx, se conecta al tx del Arduino. 
+Una vez conectado el sensor, el motor tiene que ser integrado al circuito; el servo motor tiene 3 cables,  de los cuales 2 van conectados a la corriente, generalmente el más obscuro es el que va a tierra y el que está a su lado va a la salida de 5 volts del Arduino, el otro cable es para insertarlo en el pin en el que se quiere que el servo motor reciba la señal, en este caso el pin 13. 
+3-. Una vez hecho  el circuito, se establece el código, el cual se basa en 4 pasos: 
+Primero se inicializan las variables, se da un pin de salida al sensor de bluetooth y al servo motor junto con la posición inicial del servo motor. 
+Después se abre un case, el cual sirve para evaluar varios casos, de los cuales estamos manejando 2: el primero es el que hace que el sensor abra la cerradura solamente cuando la contraseña que el usuario ha tomado como adecuada es igual a la que ingresan, el segundo es para que el motor gire del lado contrario para cerrar la cerradura, y funciona igual a como se hizo para que se abriera. 
+ 
+
+ 
+ 
+4-. Cuando el circuito y el código están listos se monta la puerta- 
+
+       
+RESULTADOS 
+Como resultado obtenemos una puerta que se abre por medio de la contraseña proveniente del celular del usuario, vía bluetooth. 
+ 
+ 
+ANÁLISIS E INTERPRETACION DE RESULTADOS 
+La cerradura responde a app del celular, el cual logra una seguridad de 1 en 59,049 que una persona ajena a la familia pueda abrir la puerta sin conocer la app. 
+CONCLUSIONES 
+•	La cerradura electrónica abierta por medio de un teléfono celular, vía bluetooth, brinda un nivel alto de seguridad. 
+•	Este sistema puede utilizarse para accionar otro tipo de mecanismos, como llaves de agua y gas. 
+
